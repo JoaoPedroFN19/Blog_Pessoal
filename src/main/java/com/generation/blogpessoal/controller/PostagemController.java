@@ -37,7 +37,6 @@ public class PostagemController {
 
 		return ResponseEntity.ok(postagemRepository.findAll());
 
-		// SELECT * FROM tb_postagens;
 	}
 
 	@GetMapping("/{id}")
@@ -46,14 +45,6 @@ public class PostagemController {
 		return postagemRepository.findById(id).map(resposta -> ResponseEntity.ok(resposta))
 				.orElse(ResponseEntity.notFound().build());
 
-		/*
-		 * Optional <Postagem> resposta = postagemRepository.findById(id);
-		 * 
-		 * if (resposta.isPresent()) return ResponseEntity.ok(resposta); else return
-		 * ResponseEntity.notFound().build();
-		 */
-
-		// SELECT * FROM tb_postagens WHERE id = 1;
 	}
 
 	@GetMapping("/titulo/{titulo}")
